@@ -53,8 +53,13 @@ public class Merge {
                 heap.offer(node);
             }
         }
+        if (heap.isEmpty()){
+            return null;
+        }
+
         LinkNode dummy = new LinkNode(-1);
         LinkNode curr = dummy;
+
         while (!heap.isEmpty()) {
             LinkNode poll = heap.poll();
             curr.setNext(poll);
@@ -102,7 +107,6 @@ public class Merge {
         }
         LinkNode dummy = new LinkNode(-1);
         LinkNode curr = dummy;
-//        LinkNode head = new LinkNode(-1);
 
         while (node1 != null && node2 != null) {
             if (node1.getVal() < node2.getVal()) {
